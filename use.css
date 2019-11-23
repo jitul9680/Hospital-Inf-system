@@ -1,0 +1,52 @@
+#mainHeader
+{
+   width:100%;
+   background-color:url("jitul.jpeg");
+   border-color:red;
+   border-width:2px;
+}
+img
+{
+    opacity:0.3;
+}
+
+#header1
+{
+    width:100%;
+    height: 200;
+    border-bottom-style: solid ;
+}
+li
+{
+    margin-top:30px;
+    float:right;
+    margin-left:50px; 
+    list-style:none;
+    color:black;
+    text-decoration:none;
+}
+a:link
+{
+    text-decoration: none;
+}
+a:active
+{
+    color:black;
+}
+li:visited
+{
+    color:black;
+}
+#marq1
+{
+  
+  font-size:20px;
+  font-weight:bold;
+  size:23;
+  color:black;
+}
+form
+{  
+    background-color: transparent
+    background-color: hsla(89, 43%, 51%, 0.3);
+}
