@@ -7,7 +7,7 @@ include("connect.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>patient search </title>
+    <title>List of Patient</title>
     <link rel="stylesheet" type="text/css" href="use.css">
     <link rel="stylesheet" type="text/css" href="use2.css">
 <style type=text/css>

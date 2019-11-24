@@ -35,7 +35,7 @@ else if(strcmp($pattype,"reffered")==0)
     $refdate=$_POST['refferedDate'];
 }
 $rn=uniqid();
-$q="Insert into patient values('$rn','$fname','$lname','$age','$weight','$gender','$address','$phoneno','$disease','$medicine','$pattype')";
+$q="INSERT INTO PATIENT VALUES('$rn','$fname','$lname','$age','$weight','$gender','$address','$phoneno','$disease','$medicine','$pattype')";
 $q_str=mysqli_query($conn,$q);
 if($q_str)
 {  
@@ -56,7 +56,7 @@ else if(strcmp($pattype,"out")==0)
 {
 
  $rn3=uniqid();
-$q="Insert into outdoor values('$rn','$rn3','$outpatdate')";
+$q="INSERT INTO OUTDOOR VALUES('$rn','$rn3','$outpatdate')";
 $q_str=mysqli_query($conn,$q);
 if($q_str)
 {  

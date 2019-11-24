@@ -14,7 +14,7 @@ include("connect.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Doctor search </title>
+    <title>List Of Doctor </title>
     <link rel="stylesheet" type="text/css" href="use.css">
     <link rel="stylesheet" type="text/css" href="use2.css">
 <style type=text/css>
@@ -49,43 +49,11 @@ th
 <th>Operations</th>
 <tr>
 <?php
-if(strcmp($_GET['by'],"0")==0 || strcmp($_GET['by'],"3")==0)
+if(strcmp($_GET['by'],"0")==0)
 {
 
  if(strcmp($_GET['by'],"0")==0)
  $query_str=mysqli_query($conn,"select * from doctor");
- else
- {   
-
- 	$searchBy=$_POST['searchBy'];
-     $searchField=$_POST['searchField'];
-     if(strcmp($searchBy,"Doctor_id")==0)
-   {  
-
-
-   		$query_str=mysqli_query($conn,"select * from doctor where doctor_id='$searchField'");                                        // echo " IN D.id "; 
-   }
-     else   if(strcmp($searchBy,"dLastName")==0)
-   {  
-
-
-   			$query_str=mysqli_query($conn,"select * from doctor WHERE lName='$searchField'");
-  //    echo " IN lastname ";
-    }
-     else if(strcmp($searchBy,"dFirstName")==0)
-   {  
-
-
-   			$query_str=mysqli_query($conn,"select * from doctor where fName='$searchField'");
-    //  echo "In DFIrst name";
-    }
-
-
-}
-
-?>
-
-<?php
 
         $count=0;
 
@@ -113,7 +81,121 @@ if(strcmp($_GET['by'],"0")==0 || strcmp($_GET['by'],"3")==0)
         ?>
         <?php
       }
-   }   ?>
+         ?>
+
+    <?php
+}
+ else
+ {   
+
+ 	$searchBy=$_POST['searchBy'];
+     $searchField=$_POST['searchField'];
+     if(strcmp($searchBy,"Doctor_id")==0)
+   {  
+
+
+   		$query_str=mysqli_query($conn,"select * from doctor where doctor_id='$searchField'");  
+   		     $count=0;
+
+        while($data=mysqli_fetch_assoc($query_str))
+    {   
+
+     $count=$count+1;
+     echo "
+        <tr>
+        <td> ".$count. "</td>
+        <td> ".$data['doctor_id']." </td>
+        <td> ".$data['fname']." </td>
+        <td> ".$data['lname']." </td>
+        <td> ".$data['age']. "</td>
+        <td> ".$data['dob']. "</td>
+        <td> ".$data['gender']. "</td>
+        <td> ".$data['phoneno']. "</td>
+        <td> ".$data['id']. "</td>
+        <td> ".$data['specialization']." </td>
+        <td> ".$data['address']. "</td>
+        </tr>"
+
+        ?>
+        <?php
+      }
+         ?>
+
+    <?php                                      // echo " IN D.id "; 
+   }
+     else   if(strcmp($searchBy,"dLastName")==0)
+   {  
+
+
+   			$query_str=mysqli_query($conn,"select * from doctor WHERE lName='$searchField'");
+   			     $count=0;
+
+        while($data=mysqli_fetch_assoc($query_str))
+    {   
+
+     $count=$count+1;
+     echo "
+        <tr>
+        <td> ".$count. "</td>
+        <td> ".$data['doctor_id']." </td>
+        <td> ".$data['fname']." </td>
+        <td> ".$data['lname']." </td>
+        <td> ".$data['age']. "</td>
+        <td> ".$data['dob']. "</td>
+        <td> ".$data['gender']. "</td>
+        <td> ".$data['phoneno']. "</td>
+        <td> ".$data['id']. "</td>
+        <td> ".$data['specialization']." </td>
+        <td> ".$data['address']. "</td>
+        </tr>"
+
+        ?>
+        <?php
+      }
+         ?>
+
+    <?php
+  //    echo " IN lastname ";
+    }
+     else if(strcmp($searchBy,"dFirstName")==0)
+   {  
+
+
+   			$query_str=mysqli_query($conn,"select * from doctor where fName='$searchField'");
+   			     $count=0;
+
+        while($data=mysqli_fetch_assoc($query_str))
+    {   
+
+     $count=$count+1;
+     echo "
+        <tr>
+        <td> ".$count. "</td>
+        <td> ".$data['doctor_id']." </td>
+        <td> ".$data['fname']." </td>
+        <td> ".$data['lname']." </td>
+        <td> ".$data['age']. "</td>
+        <td> ".$data['dob']. "</td>
+        <td> ".$data['gender']. "</td>
+        <td> ".$data['phoneno']. "</td>
+        <td> ".$data['id']. "</td>
+        <td> ".$data['specialization']." </td>
+        <td> ".$data['address']. "</td>
+        </tr>"
+
+        ?>
+        <?php
+      }
+         ?>
+
+    <?php
+    }
+
+
+}
+
+?>
+
 </tr>
 </th>
 </table>

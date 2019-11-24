@@ -3,7 +3,6 @@ session_start();
 error_reporting(0);
 include("connect.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@ include("connect.php");
         
          body
 {
-      background-image: url("back5.jpeg"); 
+      background-image: url("3.jpg"); 
       /*  background-repeat: no-repeat;
        /* background-size: auto;    */
       /*  background-size: 300px 100px; */
@@ -19,7 +18,8 @@ include("connect.php");
 #mainHeader
 {
    width:100%;
-   background-color:url("back5.jpeg");
+   min-height: 200px;
+   background-color:url("3.jpg");
    border-color:red;
    border-width:2px;
 }
@@ -31,7 +31,7 @@ img
 #header1
 {
     width:100%;
-    height: 200;
+    min-height: 150px;
     border-bottom-style: solid ;
 }
 li
@@ -57,12 +57,12 @@ li:visited
 }
 #hello
 {
-	min-height: 500px;
+  min-height: 400px;
 }
 #marq1
 {
   
-  font-size:20px;
+  font-size:40px;
   font-weight:bold;
   size:23;
   color:black;
@@ -85,30 +85,26 @@ form
 </head>
 <body>
 <div id="mainHeader">
-<div id="header1" style="align-content: center;">
-    <img weight=100px height=100px src="tu.jpeg" alt="TU">
-    <li><a href='#'> About </a></li>
-    <li><a href='search.php'>search</a></li>
-    <li><a href='doctor.php'>Doctor</a></li>
-    <li><a href='patient.php'>Patient</a></li>
-    <li><a href='index.php'>Home</a></li>
+<div id="header1" style="align-content: center; border-width: 10px;">
+    <img weight=130px height=130px src="tu.jpeg" alt="TU">
+     <li style="font-size: 20px;background-color:#A7FDB0 ;"><a href='#'> About </a></li>
+    <li style="font-size: 20px;background-color:#A7FDB0 ;"><a href='search.php'>search</a></li>
+    <li style="font-size: 20px;background-color:#A7FDB0 ;"><a href='doctor.php'>Doctor</a></li>
+    <li style="font-size: 20px;background-color:#A7FDB0 ;"><a href='patient'>Patient</a></li>
+    <li style="font-size: 20px;background-color:#A7FDB0 ;"><a href='page1.php'>Home</a></li>
 </div> 
 <center><marquee id="marq1">Hospital Management System </marquee> </center>
 </div>
 
 
 <div id="hello">
-    <h1>Welcome to Tezpur Hospital</h1>
-
-    <p>The International Patient Department at Narayana Health is dedicated to ensuring that international patients have a hassle-free, comfortable medical journey. Our department works extensively with doctors, companies, and NGOs around the world to provide access to quality healthcare at affordable prices.</p>
-
-
-    <p>
-        Baby Miracle from Nigeria was treated for a condition known as "Tetralogy of Fallot (TOF)" which is one of the common causes of "blue babies", Dr. Debasis Das Consultant - Cardiac Surgery along with his multidisciplinary...
-    </p>
+    <h1 style="font-size: 60px;text-align: center;">Welcome to ADMIN PAGE</h1>
+    
+    <p style="font-size: 20px;text-align: center;"> here you can edit,add or delete data</p>
+    <p style="font-size: 20px;text-align: center;"> Let's Begin</p>
 </div>
 </body>
 <footer style="text-align: center;">
-	<a href="index.php">logout</a>
+  <p style="font-size: 20px;text-align: center;background-color: #28F1FC  "><a href="index.php">logout</a></p>
 </footer>
 </html>
